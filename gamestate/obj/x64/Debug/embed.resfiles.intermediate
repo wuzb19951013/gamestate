@@ -1,0 +1,17 @@
+App.xbf
+dictionary\string.xbf
+dictionary\style.xbf
+GoBang.xbf
+MainPage.xbf
+pages\About.xbf
+pages\GoBangScore.xbf
+pages\LoadingPage.xbf
+pages\local.xbf
+pages\online.xbf
+pages\RatingBar.xbf
+pages\SearchPage.xbf
+pages\ViewChess.xbf
+pages\webgameview.xbf
+SavePage.xbf
+the2048.xbf
+Tile.xbf

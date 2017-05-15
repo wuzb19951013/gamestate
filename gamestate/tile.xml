@@ -1,0 +1,31 @@
+﻿<tile>
+  <visual>
+    
+    <binding template="TileSmall">
+      <image src="Assets\gobang.png" placement="background"/>
+    </binding>
+
+
+    <binding template="TileMedium">
+      <image src="Assets\gobang.png" placement="background"/>
+      <text hint-style="subtitle">类型</text>
+      <text hint-style="subtle">胜率1</text>
+      <text hint-style="subtle">胜率2</text>
+    </binding>
+
+    <binding template="TileWide">
+      <image src="Assets\gobang.png" placement="background"/>
+      <text hint-style="subtitle">类型</text>
+      <text hint-style="subtle">胜率1</text>
+      <text hint-style="subtle">胜率2</text>
+    </binding>
+
+    <binding template="TileLarge">
+      <image src="Assets\gobang.png" placement="background"/>
+      <text hint-style="subtitle">类型</text>
+      <text hint-style="subtle">胜率1</text>
+      <text hint-style="subtle">胜率2</text>
+    </binding>
+
+  </visual>
+</tile>

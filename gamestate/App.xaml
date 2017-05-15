@@ -1,0 +1,20 @@
+﻿<Application
+    x:Class="gamestate.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:gamestate"
+    RequestedTheme="Light">
+
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="dictionary/string.xaml"/>
+                <ResourceDictionary Source="dictionary/style.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <SolidColorBrush x:Key="accent" Color="LightGray"/>
+            <SolidColorBrush x:Key="gameuse" Color="PaleGreen"/>
+            <SolidColorBrush x:Key="bg" Color="White"/>
+            <SolidColorBrush x:Key="txt" Color="Black"/>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

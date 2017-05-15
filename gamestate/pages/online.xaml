@@ -1,0 +1,358 @@
+﻿<Page
+    x:Class="gamestate.pages.online"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:gamestate.pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:data="using:gamestate.models"
+    xmlns:gif="using:XamlAnimatedGif"
+    xmlns:rating ="using:gamestate"
+    Loaded="online_Loaded"
+    mc:Ignorable="d" Background="{ThemeResource accent}">
+
+    <ScrollViewer Name="myscrollview"   >
+        <ScrollViewer.Background >
+            <ImageBrush ImageSource="ms-appx:///Assets/timg (1).jpg" />
+        </ScrollViewer.Background>
+        <StackPanel Name="mystackpanal" >
+            <Grid SizeChanged="Grid_SizeChanged" Name="mygrid">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="3*"></RowDefinition>
+                    <RowDefinition Height="2*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid Name="remengrid" Grid.Row="2" Margin="1,1,1,1" Tapped="Grid_Tapped_4">
+                    <Rectangle>
+                        <Rectangle.Fill>
+                            <ImageBrush Stretch="Uniform" ImageSource="ms-appx:///Assets/13-128.png"/>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                </Grid>
+                <Grid Name="xinpingrid" Grid.Row="3" Margin="1,1,1,1" Tapped="Grid_Tapped_5">
+                    <Rectangle>
+                        <Rectangle.Fill>
+                            <ImageBrush Stretch="Uniform" ImageSource="ms-appx:///Assets/rocket.png"/>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                </Grid>
+                <Grid Name="yizhigrid" Grid.Row="2" Grid.Column="1" Margin="1,1,1,1" Tapped="Grid_Tapped_6">
+                    <Rectangle>
+                        <Rectangle.Fill>
+                            <ImageBrush Stretch="Uniform" ImageSource="ms-appx:///Assets/281602.png"/>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                </Grid>
+                <Grid Name="wunaogrid" Grid.Row="3" Grid.Column="1" Margin="1,1,1,1" Tapped="Grid_Tapped_7">
+                    <Rectangle>
+                        <Rectangle.Fill>
+                            <ImageBrush Stretch="Uniform" ImageSource="ms-appx:///Assets/1492628510_game.png"/>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                </Grid>
+                <FlipView Background="Black" SizeChanged="MyFlipView_SizeChanged" Grid.ColumnSpan="3" Grid.RowSpan="2"  Tapped="FlipView_Tapped" Name="MyFlipView"  Margin="1,1,1,1">
+                    <StackPanel Background="Black" Margin="20,30,20,30">
+                        <Image  Source="http://img4.18183.com/h5uc2015/uploads/image/2015/10/14448135978081.jpg" Tapped="Image_Loaded_0" />
+                    </StackPanel>
+                    <StackPanel Background="Black" Margin="20,30,20,30">
+
+                        <Image Source="http://img4.18183.com/h5uc2015/uploads/image/2017/04/14923991418095.jpg" Tapped="Image_Loaded_1" />
+                    </StackPanel>
+                    <StackPanel Background="Black" Margin="20,30,20,30">
+                        <Image Source="http://img4.18183.com/h5uc2015/uploads/image/2017/03/14888662671774.jpg" Tapped="Image_Loaded_2"   />
+                    </StackPanel>
+                    <StackPanel Background="Black" Margin="20,30,20,30">
+                        <Image Source="http://img4.18183.com/h5uc2015/uploads/image/2015/11/14470495775711.jpg" Tapped="Image_Loaded_3" />
+                    </StackPanel>
+                    <StackPanel Background="Black" Margin="20,30,20,30">
+                        <Image Source="http://img4.18183.com/h5uc2015/uploads/image/2015/12/14501680567256.jpg" Tapped="Image_Loaded_4"  />
+                    </StackPanel>
+                </FlipView>
+                <Grid Name="laoban" Grid.Row="2" Grid.Column="4" Grid.RowSpan="2" Margin="1,1,1,1" Tapped="Grid_Tapped" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Image Grid.RowSpan="2" gif:AnimationBehavior.SourceUri="ms-appx:///Assets/003.gif"/>
+                    <Border
+                            Grid.Row="1"
+                            Height="28"
+                            VerticalAlignment="Bottom"
+                            Background="#AAAAAAAA">
+                        <TextBlock
+                                Text="你不知道的秘密"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Center"
+                                Foreground="#FF130101">
+                        </TextBlock>
+                    </Border>
+                </Grid>
+                <Grid Name="yinyue" Grid.Column="3" SizeChanged="yinyue_SizeChanged" Grid.ColumnSpan="2" Grid.RowSpan="2" Margin="1,1,1,1" Tapped="Grid_Tapped_1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.RowSpan="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="4*"/>
+                            <RowDefinition Height="3*"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Row="0" Name="GameName"  Margin="20,30,0,0" 
+                                   Text="森林历险记"
+                                  FontSize="36" HorizontalAlignment="Left" VerticalAlignment="Center" AllowDrop="True" IsTextSelectionEnabled="True" FontFamily="Microsoft YaHei UI Light"  TextWrapping="Wrap" Foreground="White" />
+
+
+                        <rating:RatingBar   Grid.Row="1" x:Name="rtb"
+                                        Margin="20,0,0,0"
+                                        HorizontalAlignment="Left" VerticalAlignment="Center"
+                      RatingValue="4"       NumberOfStars="5"  StarForegroundColor="#E5FFFF33" HeightValue="30"/>
+
+                        <TextBlock Grid.Row="2" Name="Intro" Margin="20,0,20,0"  HorizontalAlignment="Left" VerticalAlignment="Center" AllowDrop="True" IsTextSelectionEnabled="True" FontFamily="Microsoft YaHei UI Light" FontSize="18" TextWrapping="Wrap" Foreground="White" >
+                            <Run Text="    "/>
+                            <Run Text="森林历险记，要小心不能碰到黑猫，否则会被女巫囚禁！"/>
+                        </TextBlock>
+                        <Button Grid.Row="3" Name="StartGame"  HorizontalAlignment="Left"  Margin="20,0,0,0"
+                                VerticalAlignment="Center" AllowDrop="True"  FontFamily="Microsoft YaHei UI Light" FontWeight="Bold" 
+                                Width="200" Height="50" Background="#FF28799E" Content="开始游戏" FontSize="24" Foreground="White" 
+                                Click="StartGame_Click"/>
+
+                    </Grid>
+
+                </Grid>
+                <Grid Name="zhizhu" Grid.Row="2" Grid.Column="2" Grid.RowSpan="2" Margin="1,1,1,1" Tapped="Grid_Tapped_2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Image Grid.RowSpan="2" gif:AnimationBehavior.SourceUri="ms-appx:///Assets/001.gif"/>
+                    <Border
+                            Grid.Row="1"
+                            Height="28"
+                            VerticalAlignment="Bottom"
+                            Background="#AAAAAAAA">
+                        <TextBlock
+                                Text="史上最贱游戏系列"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Center"
+                                Foreground="#FF0E0D0D">
+                        </TextBlock>
+                    </Border>
+                </Grid>
+                <Grid Name="xiaotou" Grid.Row="2" Grid.Column="3" Grid.RowSpan="2" Margin="1,1,1,1" Tapped="Grid_Tapped_3">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Image Grid.RowSpan="2" gif:AnimationBehavior.SourceUri="ms-appx:///Assets/002.gif"/>
+                    <Border
+                            Grid.Row="1"
+                            Height="28"
+                            VerticalAlignment="Bottom"
+                            Background="#AAAAAAAA">
+                        <TextBlock
+                                Text="火影忍者"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Center"
+                                Foreground="#FF0E0D0D">
+                        </TextBlock>
+                    </Border>
+                </Grid>
+            </Grid>
+
+
+            <TextBlock
+                    Name="rementuijian" Margin="0,50,0,0"
+                    Text="热门推荐" FontFamily="Microsoft YaHei UI Light" FontSize="36" Foreground="#FFFBF7F7"/>
+            <Rectangle
+                    Height="3"
+                    Margin="0, 12, 0, 12"
+                    Fill="Gray"/>
+            <GridView ItemsSource="{x:Bind Games}"
+                  IsItemClickEnabled="True"
+                  ItemClick="GridView_ItemClick"
+                  Grid.Row="1">
+                <GridView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <!-- 设置 item 格式-->
+                        <ItemsWrapGrid
+                        Name="GridItem"
+                        Orientation="Horizontal"
+                        SizeChanged="GridItem_SizeChanged"/>
+                    </ItemsPanelTemplate>
+                </GridView.ItemsPanel>
+                <GridView.ItemTemplate>
+                    <DataTemplate x:DataType="data:Game">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="auto"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Image Grid.RowSpan="2" VerticalAlignment="Center" Stretch="UniformToFill" Source="{x:Bind Coverimage}"/>
+                            <!--TextBlock FontSize="16" Grid.Row="1" Text="{x:Bind Title}" HorizontalAlignment="Left"/-->
+                            <Border
+                            Grid.Row="1"
+                            Height="28"
+                            VerticalAlignment="Bottom"
+                            Background="#AADDA0DD">
+                                <TextBlock
+                                Text="{x:Bind Title}"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Center"
+                                Foreground="Black">
+                                </TextBlock>
+                            </Border>
+                        </Grid>
+                    </DataTemplate>
+                </GridView.ItemTemplate>
+            </GridView>
+            <TextBlock
+                    Name="xinpinchangxian"
+                    Text="新品尝鲜"
+                    FontFamily="Microsoft YaHei UI Light" FontSize="36" Foreground="#FFFBF7F7"/>
+            <Rectangle
+                    Height="3"
+                    Margin="0, 12, 0, 12"
+                    Fill="Gray"/>
+            <GridView ItemsSource="{x:Bind Games2}"
+                  IsItemClickEnabled="True"
+                  ItemClick="GridView_ItemClick"
+                  Grid.Row="2">
+                <GridView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <!-- 设置 item 格式-->
+                        <ItemsWrapGrid
+                        Name="GridItem"
+                        Orientation="Horizontal"
+                        SizeChanged="GridItem_SizeChanged_1"/>
+                    </ItemsPanelTemplate>
+                </GridView.ItemsPanel>
+                <GridView.ItemTemplate>
+                    <DataTemplate x:DataType="data:Game">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="auto"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Image Grid.RowSpan="2" VerticalAlignment="Center" Stretch="UniformToFill" Source="{x:Bind Coverimage}"/>
+                            <!--TextBlock FontSize="16" Grid.Row="1" Text="{x:Bind Title}" HorizontalAlignment="Left"/-->
+                            <Border
+                            Grid.Row="1"
+                            Height="28"
+                            VerticalAlignment="Bottom"
+                            Background="#AADDA0DD">
+                                <TextBlock
+                                Text="{x:Bind Title}"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Center"
+                                Foreground="Black">
+                                </TextBlock>
+                            </Border>
+                        </Grid>
+                    </DataTemplate>
+                </GridView.ItemTemplate>
+            </GridView>
+            <TextBlock
+                    Name="yizhiyule"
+                    Text="益智娱乐"
+                    FontFamily="Microsoft YaHei UI Light" FontSize="36" Foreground="#FFFBF7F7"/>
+            <Rectangle
+                    Height="3"
+                    Margin="0, 12, 0, 12"
+                    Fill="Gray"/>
+            <GridView ItemsSource="{x:Bind Games3}"
+                  IsItemClickEnabled="True"
+                  ItemClick="GridView_ItemClick"
+                  Grid.Row="3">
+                <GridView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <!-- 设置 item 格式-->
+                        <ItemsWrapGrid
+                        Name="GridItem"
+                        Orientation="Horizontal"
+                        SizeChanged="GridItem_SizeChanged"/>
+                    </ItemsPanelTemplate>
+                </GridView.ItemsPanel>
+                <GridView.ItemTemplate>
+                    <DataTemplate x:DataType="data:Game">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="auto"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Image Grid.RowSpan="2" VerticalAlignment="Center" Stretch="UniformToFill" Source="{x:Bind Coverimage}"/>
+                            <!--TextBlock FontSize="16" Grid.Row="1" Text="{x:Bind Title}" HorizontalAlignment="Left"/-->
+                            <Border
+                            Grid.Row="1"
+                            Height="28"
+                            VerticalAlignment="Bottom"
+                            Background="#AADDA0DD">
+                                <TextBlock
+                                Text="{x:Bind Title}"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Center"
+                                Foreground="Black">
+                                </TextBlock>
+                            </Border>
+                        </Grid>
+                    </DataTemplate>
+                </GridView.ItemTemplate>
+            </GridView>
+            <TextBlock
+                    Name="wunaodanji"
+                    Text="无脑单机"
+                    FontFamily="Microsoft YaHei UI Light" FontSize="36" Foreground="#FFFBF7F7"/>
+            <Rectangle
+                    Height="3"
+                    Margin="0, 12, 0, 12"
+                    Fill="Gray"/>
+            <GridView ItemsSource="{x:Bind Games4}"
+                  IsItemClickEnabled="True"
+                  ItemClick="GridView_ItemClick"
+                  Grid.Row="4">
+                <GridView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <!-- 设置 item 格式-->
+                        <ItemsWrapGrid
+                        Name="GridItem"
+                        Orientation="Horizontal"
+                        SizeChanged="GridItem_SizeChanged_1"/>
+                    </ItemsPanelTemplate>
+                </GridView.ItemsPanel>
+                <GridView.ItemTemplate>
+                    <DataTemplate x:DataType="data:Game">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="auto"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Image Grid.RowSpan="2" VerticalAlignment="Center" Stretch="UniformToFill" Source="{x:Bind Coverimage}"/>
+                            <!--TextBlock FontSize="16" Grid.Row="1" Text="{x:Bind Title}" HorizontalAlignment="Left"/-->
+                            <Border
+                            Grid.Row="1"
+                            Height="28"
+                            VerticalAlignment="Bottom"
+                            Background="#AADDA0DD">
+                                <TextBlock
+                                Text="{x:Bind Title}"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Center"
+                                Foreground="Black">
+                                </TextBlock>
+                            </Border>
+                        </Grid>
+                    </DataTemplate>
+                </GridView.ItemTemplate>
+            </GridView>
+        </StackPanel>
+    </ScrollViewer>
+</Page>

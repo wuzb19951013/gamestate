@@ -1,0 +1,218 @@
+﻿<Page x:ConnectionId='1'
+    x:Class="gamestate.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:gamestate"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" 
+                      
+                        >
+
+    <Grid Background="{ThemeResource bg}" >
+
+
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:ConnectionId='2' x:Name="VisualStateGroup">
+                <VisualState x:ConnectionId='3' x:Name="NarrowVisualState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="{StaticResource NarrowMinWidth}"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="HamburgerButton.IsEnabled" Value="true"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:ConnectionId='4' x:Name="NormalVisualState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="{StaticResource NormalMinWidth}"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="MySplitView.IsPaneOpen" Value="false"/>
+                        <Setter Target="HamburgerButton.IsEnabled" Value="true"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <RelativePanel Background="{ThemeResource SystemControlBackgroundBaseLowBrush}">
+                <Button x:ConnectionId='32' Name="HamburgerButton"
+                        Width="48"
+                    RelativePanel.AlignLeftWithPanel="True"
+                    FontFamily="Segoe MDL2 Assets"
+                    FontSize="24" 
+                    Content="&#xE700;" 
+                                                  />
+
+                <TextBlock x:ConnectionId='33' Name="TitleTextBlock"
+                           Visibility="Visible"
+                       RelativePanel.RightOf="HamburgerButton"
+                       FontSize="24"
+                       Margin="20,5,0,0"/>
+
+                <Button x:ConnectionId='34' Name="SearchButton" 
+                    RelativePanel.AlignRightWithPanel="True"
+                                              
+                    FontFamily="Segoe MDL2 Assets"
+                    FontSize="24" 
+                    Content="&#xE1A3;" />
+
+            </RelativePanel>
+
+            <SplitView x:ConnectionId='5' Grid.Row="1" 
+                   Name="MySplitView"
+                   DisplayMode="CompactInline" 
+                   OpenPaneLength="200" 
+                   CompactPaneLength="48">
+                <SplitView.Pane>
+                    <RelativePanel Background="{ThemeResource accent}">
+                        <ListBox x:ConnectionId='25' SelectionMode="Single" 
+                                 Background="{ThemeResource accent}"
+                                                                    
+                                 RelativePanel.AlignTopWithPanel="True">
+                            <ListBoxItem x:ConnectionId='28' Name="Online">
+                                <StackPanel Orientation="Horizontal">
+                                    <SymbolIcon Style="{StaticResource HambugerMenuSymbolIcon}"
+                                            Symbol="World"/>
+                                    <TextBlock Foreground="{ThemeResource txt}"
+                                Style="{StaticResource HambugerMenuText}"
+                                Text="{StaticResource online}"
+                                FontSize="24" Margin="20,0,0,0">
+                                    </TextBlock>
+                                </StackPanel>
+                            </ListBoxItem>
+                            <ListBoxItem x:ConnectionId='29' Name="Local">
+                                <StackPanel Orientation="Horizontal">
+                                    <SymbolIcon Style="{StaticResource HambugerMenuSymbolIcon}" Symbol="Home" />
+                                    <TextBlock Foreground="{ThemeResource txt}"
+                                Style="{StaticResource HambugerMenuText}"
+                                Text="{StaticResource local}"
+                                FontSize="24" Margin="20,0,0,0">
+                                    </TextBlock>
+                                </StackPanel>
+                            </ListBoxItem>
+                            <ListBoxItem x:ConnectionId='30' Name="Collection">
+                                <StackPanel Orientation="Horizontal">
+                                    <SymbolIcon Style="{StaticResource HambugerMenuSymbolIcon}" Symbol="Favorite" />
+                                    <TextBlock
+                                Style="{StaticResource HambugerMenuText}"
+                                Text="{StaticResource favorite}"
+                                Foreground="{ThemeResource txt}"
+                                FontSize="24" Margin="20,0,0,0">
+                                    </TextBlock>
+                                </StackPanel>
+                            </ListBoxItem>
+                        </ListBox>
+                        <Button x:ConnectionId='26' Background="Transparent" 
+                                Name="share" 
+                                RelativePanel.Above="setting"
+                                                   
+                                >
+                            <StackPanel Orientation="Horizontal" Width="200">
+                                <SymbolIcon Style="{StaticResource HambugerMenuSymbolIcon}"  Symbol="Like"/>
+                                <TextBlock
+                                Style="{StaticResource HambugerMenuText}"
+                                Text="分享"
+                                Foreground="{ThemeResource txt}"
+                                FontSize="24" Margin="20,0,0,0">
+                                </TextBlock>
+                            </StackPanel>
+                        </Button>
+                        <Button x:ConnectionId='27' Background="Transparent" 
+                                Name="setting" 
+                                RelativePanel.AlignBottomWithPanel="True"
+                                                     
+                                >
+                            <StackPanel Orientation="Horizontal" Width="200">
+                                <SymbolIcon Style="{StaticResource HambugerMenuSymbolIcon}" Symbol="Setting"/>
+                                <TextBlock
+                                Style="{StaticResource HambugerMenuText}"
+                                Text="{StaticResource control}"
+                                Foreground="{ThemeResource txt}"
+                                FontSize="24" Margin="20,0,0,0">
+                                </TextBlock>
+                            </StackPanel>
+                        </Button>
+                    </RelativePanel>
+                </SplitView.Pane>
+                <SplitView.Content>
+                    <Frame x:ConnectionId='31' Name="MyFrame"></Frame>
+                </SplitView.Content>
+            </SplitView>
+            <SplitView x:ConnectionId='6' Grid.Row="1" 
+                       Name="Mysplitview2"
+                       DisplayMode="Overlay"
+                       PanePlacement="Right"
+                       OpenPaneLength="250"
+                       IsPaneOpen="False">
+                <SplitView.Pane>
+
+                    <ScrollViewer >
+                        <StackPanel Background="{ThemeResource accent}" Orientation="Vertical">
+                            <TextBlock x:ConnectionId='7' x:Uid="generalSetting" FontSize="35" Height="50" 
+                   Text="常规设置" Margin="5" x:Name="header" Foreground="{ThemeResource txt}"/>
+
+                            <TextBlock x:ConnectionId='8' x:Uid="chooseAccentColor" FontSize="20" Text="强调色" 
+                           Margin="5" x:Name="choosea" Foreground="{ThemeResource txt}"/>
+                            <RadioButton x:ConnectionId='9' GroupName="colora" Margin="5" Height="30"                           Name="theme" Foreground="{ThemeResource accent}">
+                                <Grid>
+                                    <Rectangle Fill="{ThemeResource SystemAccentColor}" Width="100" Height="30" Stroke="{ThemeResource txt}"/>
+                                    <TextBlock x:Uid="system" Text="跟随系统" Foreground="{ThemeResource txt}" FontWeight="Bold"/>
+                                </Grid>
+                            </RadioButton>
+                            <RadioButton x:ConnectionId='10' GroupName="colora" Margin="5" Height="30"                           Name="orange" Foreground="{ThemeResource accent}">
+                                <Rectangle Fill="Orange" Width="100" Height="30" Stroke="{ThemeResource txt}"/>
+                            </RadioButton>
+                            <RadioButton x:ConnectionId='11' GroupName="colora" Margin="5" Height="30"                           Name="LightGray" Foreground="{ThemeResource accent}">
+                                <Rectangle Fill="LightGray" Width="100" Height="30" Stroke="{ThemeResource txt}"/>
+                            </RadioButton>
+                            <RadioButton x:ConnectionId='12' GroupName="colora" Margin="5" Height="30"                           Name="blue" Foreground="{ThemeResource accent}">
+                                <Rectangle Fill="LightBlue" Width="100" Height="30" Stroke="{ThemeResource txt}"/>
+                            </RadioButton>
+                            <RadioButton x:ConnectionId='13' GroupName="colora" Margin="5"                            Name="custom" IsChecked="True" Foreground="{ThemeResource accent}">
+                                <Grid>
+                                    <TextBlock x:Uid="custom" Text="自定义" Foreground="{ThemeResource txt}"/>
+                                    <TextBox x:ConnectionId='24' Width="100" x:Name="coloratxt"                          />
+                                </Grid>
+                            </RadioButton>
+                            <TextBlock x:ConnectionId='14' x:Uid="chooseBackground" FontSize="20" Text="背景色" 
+                           Margin="5" x:Name="chooseb" Foreground="{ThemeResource txt}"/>
+                            <RadioButton x:ConnectionId='15' GroupName="colorb" Margin="5" Height="30"                           Name="light" Foreground="{ThemeResource accent}">
+                                <Rectangle Fill="White" Width="100" Height="30" Stroke="{ThemeResource txt}"/>
+                            </RadioButton>
+                            <RadioButton x:ConnectionId='16' GroupName="colorb" Margin="5" Height="30"                           Name="dark" Foreground="{ThemeResource accent}">
+                                <Rectangle Fill="Gray" Width="100" Height="30" Stroke="{ThemeResource txt}"/>
+                            </RadioButton>
+                            <RadioButton x:ConnectionId='17' GroupName="colorb" Margin="5"                           Name="custom2" IsChecked="True" Foreground="{ThemeResource accent}">
+                                <Grid>
+                                    <TextBlock x:Uid="custom"  Text="自定义" Foreground="{ThemeResource txt}"/>
+                                    <TextBox x:ConnectionId='23' Width="100" x:Name="colorbtxt"                          />
+                                </Grid>
+                            </RadioButton>
+                            <TextBlock x:ConnectionId='18' FontSize="20" Text="文字颜色" x:Uid="txtcolor"
+                           Margin="5" x:Name="choosec" Foreground="{ThemeResource txt}"/>
+                            <RadioButton x:ConnectionId='19' GroupName="colorc" Margin="5" Height="30"                           Name="white" Foreground="{ThemeResource accent}">
+                                <Rectangle Fill="White" Width="100" Height="30" Stroke="{ThemeResource txt}"/>
+                            </RadioButton>
+                            <RadioButton x:ConnectionId='20' GroupName="colorc" Margin="5" Height="30"                           Name="black" Foreground="{ThemeResource accent}">
+                                <Rectangle Fill="Black" Width="100" Height="30" Stroke="{ThemeResource txt}"/>
+                            </RadioButton>
+                            <RadioButton x:ConnectionId='21' GroupName="colorc" Margin="5"                           Name="custom3" IsChecked="True" Foreground="{ThemeResource accent}">
+                                <Grid>
+                                    <TextBlock x:Uid="custom" Text="自定义" Foreground="{ThemeResource txt}"/>
+                                    <TextBox x:ConnectionId='22' Width="100" x:Name="colorctxt"                          />
+                                </Grid>
+                            </RadioButton>
+                        </StackPanel>
+                    </ScrollViewer>
+                </SplitView.Pane>
+            </SplitView>
+        </Grid>
+    </Grid>
+</Page>
+
